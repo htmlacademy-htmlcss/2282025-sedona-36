@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <header class="page-header">
+    <header class="page-header" data-test="header">
         <a class="navigation-logo" href="index.html">
             <img class="page-header-logo" alt="Логотип сайта Седона" src="#">
         </a>
@@ -43,7 +43,7 @@
             </ul>
         </nav>
     </header>
-    <main class="main-inner">
+    <main class="main-inner" data-test="main">
         <header class="inner-header">
             <h1 class="inner-header-title">Гостиницы Седоны</h1>
             <ul class="breadcrumbs">
@@ -59,7 +59,7 @@
                 </li>
             </ul>
         </header>
-        <section class="catalog-hotel-filters">
+        <section class="catalog-hotel-filters" data-test="filter">
             <h2 class="visually-hidden">Список фильтров для выбора гостиницы</h2>
             <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
                 <fieldset class="catalog-filter-group">
@@ -133,7 +133,7 @@
                 <span class="visually-hidden">Показать списком</span>
             </a>
         </section>
-        <section class="product-catalog">
+        <section class="product-catalog" data-test="catalog">
         <ul class="product-list">
                 <li class="product-card">
                     <a class="product-card-link" href="product.html">
@@ -222,7 +222,7 @@
                 </li>
             </ul>
         </section>
-        <section class="subscribe">
+        <section class="subscribe" data-test="subscribe">
             <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
             <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -233,7 +233,7 @@
             </form>
         </section>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer" data-test="footer">
         <section class="footer-social">
           <h2 class="visually-hidden">Мы в социальных сетях</h2>
           <ul class="footer-social-list">
