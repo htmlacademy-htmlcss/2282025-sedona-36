@@ -1,3 +1,21 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-brown: #756157;
+  --color-blue: #82b3d3;
+  --color-gray: #242424;
+  --color-beige: #e6e6e6;
+  --color-green: #7db54f;
+  --color-light-beige: #f2f2f2;
+
+
+
+
+
+
+}
+
+
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
@@ -14,19 +32,29 @@
   font-display: swap;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  margin: 0;
 }
 
 .button {
+  font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+
+
 }
 
 /*Шапка*/
@@ -36,23 +64,29 @@ body {
   font-weight: 700;
 }
 
-.navigation a {
+.navigation-link {
   text-align: center;
-  color: #000000;
+  color: var(--color-black);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navigation-user-link {
+  text-align: center;
+  color: var(--color-black);
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .page-header-button {
-  background-color: #756157;
-  color: #ffffff;
+  background-color: var(--color-brown);
+  color: var(--color-white);
 }
 
 /*Херо-блок*/
 .hero {
-  background-color: #ffffff;
-  color: #000000;
-  /*Фоновое изображение отображается не полностью, почему?*/
+  background-color: var(--color-white);
+  color: var(--color-black);
   background-image: url("../images/index/hero-background.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -70,16 +104,16 @@ body {
   text-align: center;
 }
 
-.advantages-item-row {
-  background-color: #82B3D3;
-  color: #ffffff;
-}
-
-.advantages-item-column {
+.advantages-item {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
-.advantages-item-column-middle {
+.advantages-item-blue {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.advantages-item-light-blue {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
@@ -151,21 +185,28 @@ body {
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: #756157;
-  color: #ffffff;
+  background-color: var(--color-brown);
+  color: var(--color-white);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 /*Подписка*/
+
 .subscribe {
-  background-color: #ffffff;
-  color: #000000;
+  color: var(--color-black);
+
+}
+
+.subscribe-bacground {
   background-image: url("../images/index/subscribe-background.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  color: var(--color-white);
 }
+
+/*как сделать если картинка не загрузится, что бы текст был черным?*/
 
 .subscribe-title {
   font-size: 30px;
@@ -180,19 +221,25 @@ body {
   font-weight: 400;
 }
 
+.subscribe-field {
+  background-color: var(--color-light-beige);
+  font-family: inherit;
+}
+
 .subscribe-button {
+
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: #82B3D3;
-  color: #ffffff;
-  border-color: #82B3D3;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-blue);
 }
 
 /*Подвал*/
 .page-footer a {
   text-align: center;
-  color: #000000;
+  color: var(--color-black);
 }
 
 .footer-contact-phone {
@@ -201,31 +248,32 @@ body {
   font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
-  color: #242424;
+  color: var(--color-gray);
   text-align: center;
 }
 
 /*Фильтры*/
 .filters {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-white);
+  color: var(--color-black);
   background-image: url("../images/index/subscribe-background.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
+
 .filters-title {
   font-size: 60px;
   line-height: 78px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .catalog-hotel-filters {
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .catalog-filter-title {
@@ -238,20 +286,21 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: #82B3D3;
-  color: #ffffff;
-  border-color: #82B3D3;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-blue);
 }
 
-/*Сортировка гостиниц*/
+
 .reset-button {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  color: #ffffff;
-  border-color: #ffffff;
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 
+/*Сортировка гостиниц*/
 .catalog-hotel-sorting-found {
   font-size: 30px;
   line-height: 36px;
@@ -269,7 +318,7 @@ body {
 }
 
 /*Каталог*/
-.product-card a {
+.product-card-link {
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -278,7 +327,10 @@ body {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
-  background-color: #E6E6E6;
+  background-color: var(--color-beige);
+  text-decoration: none;
+  text-transform: uppercase;
+
 }
 
 .product-card-price {
@@ -288,7 +340,7 @@ body {
 }
 
 .product-card-title {
-  color: #000000;
+  color: var(--color-black);
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
@@ -299,30 +351,30 @@ body {
   line-height: 20px;
   font-weight: 700;
   text-align: center;
-  background-color: #756157;
-  color: #ffffff;
+  background-color: var(--color-brown);
+  color: var(--color-white);
 }
 
 .button-card {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: #82B3D3;
-  color: #ffffff;
-  border-color: #82B3D3;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-blue);
 }
 
 .button-card-current {
-  background-color: #7DB54F;
-  color: #ffffff;
-  border-color: #7DB54F;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border-color: var(--color-green);
 }
 
 .top {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  background-color: #F2F2F2;
+  background-color: var(--color-light-beige);
   text-align: center;
   text-transform: uppercase;
 }
@@ -338,16 +390,14 @@ body {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #82B3D3;
-  color: #ffffff;
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
 
 .pagination-current {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: #F2F2F2;
-  color: #000000;
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
 }
-
-/*Как стилизовать одинаковые блоки на разных страницах? класс один, а стиль разный (subscribe)*/
