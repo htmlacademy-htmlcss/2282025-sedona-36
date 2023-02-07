@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Место отдыха, город Седона</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -115,7 +116,7 @@
     </section>
     <section class="catalog-hotel-sorting">
       <h2 class="visually-hidden">Сортировка гостиниц</h2>
-      <span>Найдено гостиниц: 38</span>
+      <span class="catalog-hotel-sorting-found">Найдено гостиниц: 38</span>
       <select class="select-control" aria-label="Сортировка">
         <option value="cheap">Сначала дешёвые</option>
         <option value="expensive">Сначала дорогие</option>
@@ -151,14 +152,7 @@
           <b class="product-card-price">от 4000 ₽</b>
           <a class="product-card-button button" href="#">Подробнее</a>
           <button class="button button-card" type="submit">В Избранное</button>
-          <div>
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <!--Как я поняла они тоже декоративные? Или оставляеи в коде(Расскажи?^^)-->
-          </div>
-          <span>Рейтинг: 8,5</span>
+          <span class="top">Рейтинг: 8,5</span>
         </li>
         <li class="product-card">
           <a class="product-card-link" href="#">
@@ -169,14 +163,8 @@
           <span>Гостиница</span>
           <b class="product-card-price">от 5000 ₽</b>
           <a class="product-card-button button" href="#">Подробнее</a>
-          <button class="button button-card" type="button">В Избранном</button>
-          <div>
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-          </div>
-          <span>Рейтинг: 9,2</span>
+          <button class="button button-card button-card-current" type="button">В Избранном</button>
+          <span class="top">Рейтинг: 9,2</span>
         </li>
         <li class="product-card">
           <a class="product-card-link" href="#">
@@ -188,12 +176,7 @@
           <b class="product-card-price">от 2500 ₽</b>
           <a class="product-card-button button" href="#">Подробнее</a>
           <button class="button button-card" type="submit">В Избранное</button>
-          <div>
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-          </div>
-          <span>Рейтинг: 6,9</span>
+          <span class="top">Рейтинг: 6,9</span>
         </li>
         <li class="product-card">
           <a class="product-card-link" href="#">
@@ -205,11 +188,7 @@
           <b class="product-card-price">от 1500 ₽</b>
           <a class="product-card-button button" href="#">Подробнее</a>
           <button class="button button-card" type="submit">В Избранное</button>
-          <div>
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-            <img class="icon-star" src="images/catalog/star.svg" alt="">
-          </div>
-          <span>Рейтинг: 8,5</span>
+          <span class="top">Рейтинг: 8,5</span>
         </li>
       </ul>
       <ol class="pagination">
@@ -272,7 +251,7 @@
     </section>
     <article class="footer-developer-logo">
       <h2 class="visually-hidden">Сайт разработчика</h2>
-      </a>
+      <a class="footer-developer-logo-link" href="https://htmlacademy.ru/">.html academy</a>
     </article>
   </footer>
 </body>
