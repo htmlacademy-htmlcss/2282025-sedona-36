@@ -46,7 +46,6 @@ body {
   font-weight: 400;
   background-color: var(--color-white);
   color: var(--color-black);
-
 }
 
 .visually-hidden {
@@ -262,7 +261,6 @@ body {
 
 .subscribe {
   color: var(--color-black);
-
 }
 
 .subscribe-bacground {
@@ -292,7 +290,6 @@ body {
 }
 
 .subscribe-button {
-
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
@@ -322,7 +319,6 @@ body {
   margin: 0;
   padding: 0;
   width: 720px;
-
 }
 
 .footer-developer-logo {
@@ -352,6 +348,12 @@ body {
 
 /*Фильтры*/
 
+.catalog-filter {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
 .filters {
   background-color: var(--color-blue);
   background-image: url("../images/catalog/filtr-backgraund.jpg");
@@ -365,6 +367,7 @@ body {
   line-height: 78px;
   font-weight: 700;
   color: var(--color-white);
+  margin: 0;
 }
 
 .catalog-hotel-filters {
@@ -402,35 +405,63 @@ body {
 /*Сортировка гостиниц*/
 
 .catalog-hotel-sorting {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0;
+  width: 1060px;
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
 }
 
+.catalog-hotel-sorting-found {
+  width: 338px;
+  margin-right: 200px;
+  padding: 0;
+}
+
 .select-control {
+  width: 292px;
+  margin-right: 0;
+  padding: 0;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
 }
 
 .sort-list {
+  width: 160px;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  margin-left: 70px;
 }
 
 /*Каталог*/
+.product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  width: 1060px;
+  margin: 0 auto;
+}
+
 .product-card-link {
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .product-card {
+  width: 340px;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
   background-color: var(--color-beige);
   text-decoration: none;
   text-transform: uppercase;
-
 }
 
 .product-card-price {
@@ -481,16 +512,24 @@ body {
 
 /*Пагинация*/
 .pagination {
+  display: flex;
+  justify-content: flex-start;
+  width: 1060px;
+  margin: 0 auto;
+  padding: 0;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
+  list-style: none;
 }
 
 .pagination-link {
+  width: 60px;
+  margin-right: 8px;
   text-align: center;
+  background-color: var(--color-blue);
   text-decoration: none;
   text-transform: uppercase;
-  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
