@@ -95,14 +95,7 @@ body {
 }
 
 /* Навигация */
-.navigation-link,
-.navigation-user-link {
-  display: block;
-  padding: 20px 16px;
-  text-align: center;
-  color: var(--color-black);
-  text-decoration: none;
-}
+
 
 /* Навигация левая */
 .page-header-logo-link {
@@ -126,7 +119,13 @@ body {
   margin: 0;
   list-style: none;
 }
-
+.navigation-link {
+  display: block;
+  padding: 20px 16px;
+  text-align: center;
+  color: var(--color-black);
+  text-decoration: none;
+}
 /* Навигация правая */
 .navigation-right {
   display: flex;
@@ -139,6 +138,13 @@ body {
 .navigation-user-item {
   min-width: 44px;
   min-height: 64px;
+}
+.navigation-user-link {
+  display: block;
+  padding: 22px 12px;
+  text-align: center;
+  color: var(--color-black);
+  text-decoration: none;
 }
 
 .page-header-button {
@@ -356,8 +362,6 @@ body {
   color: var(--color-black);
   padding-top: 96px;
   padding-bottom: 104px;
-
-
 }
 
 .subscribe-bacground {
