@@ -11,23 +11,27 @@
   <div class="page-container">
     <header class="page-header">
       <div class="navigation-left">
-        <a class="page-header-logo-link" href="index.html">
-          <img class="page-header-logo" src="images/index/logo-header.svg" width="140" height="70"
-            alt="Логотип сайта Седона.">
-        </a>
-        <nav class="navigation">
-          <ul class="navigation-list">
-            <li class="navigation-item">
-              <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">О Седоне</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="catalog.html">Гостиницы</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="logo-container">
+          <a class="page-header-logo-link" href="index.html">
+            <img class="page-header-logo" src="images/index/logo-header.svg" width="140" height="70"
+              alt="Логотип сайта Седона.">
+          </a>
+        </div>
+        <div class="navigation-container">
+          <nav class="navigation">
+            <ul class="navigation-list">
+              <li class="navigation-item">
+                <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="#">О Седоне</a>
+              </li>
+              <li class="navigation-item">
+                <a class="navigation-link" href="catalog.html">Гостиницы</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="navigation-right">
         <nav class="navigation">
@@ -128,7 +132,8 @@
       <section class="hotel-search">
         <div class="hotel-search-container">
           <h2 class="hotel-search-title">Заинтересовались?</h2>
-          <p class="hotel-search-text">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц
+          <p class="hotel-search-text">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения
+            гостиниц
             в
             Седоне</p>
           <a class="button hotel-search-button" href="#">Поиск гостиницы в Седоне</a>
@@ -137,7 +142,7 @@
       <section class="subscribe subscribe-bacground">
         <div class="subscribe-container">
           <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
-          <p class="subscribe-text">Только полезная информация и никакого спама, честное бойскаутское!</p>
+          <p class="subscribe-text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
             <input class="subscribe-field" placeholder="email@example.com" type="email" name="subscribe-email"
               id="subscribe-email" required>
