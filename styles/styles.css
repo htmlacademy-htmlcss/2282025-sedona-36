@@ -704,31 +704,44 @@ body {
 }
 
 .product-list {
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .product-card {
+  padding: 20px;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
-  background-color: var(--color-beige);
-  text-decoration: none;
-  text-transform: uppercase;
+  border: 1px solid var(--color-beige);
+  border-radius: 4px;
+
 }
 
-.product-card-price-container,
-.product-card-button-container,
-.product-card-top-container {
-  display: flex;
+.product-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  gap: 16px;
 }
 
 .product-card-link {
-  display: flex;
-  flex-direction: column;
+  grid-column: 1/-1;
+}
+
+.product-card-title-link {
+  grid-column: 1/-1;
   text-decoration: none;
-  text-transform: uppercase;
+}
+/* нужно указывать object-fit и width? */
+.product-card-img {
+  display: block;
+  object-fit: contain;
+  width: 100%;
 }
 
 .product-card-title {
@@ -741,6 +754,7 @@ body {
 }
 
 .product-card-price {
+  text-align: end;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
@@ -750,6 +764,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  padding: 8px 20px;
   text-align: center;
   background-color: var(--color-brown);
   color: var(--color-white);
@@ -761,7 +776,7 @@ body {
   font-weight: 700;
   background-color: var(--color-blue);
   color: var(--color-white);
-  border-color: var(--color-blue);
+  border: none;
 }
 
 .button-card-current {
@@ -774,6 +789,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  padding: 9px 22px 8px 23px;
   background-color: var(--color-light-beige);
   text-align: center;
   text-transform: uppercase;
