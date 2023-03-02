@@ -728,14 +728,16 @@ body {
   justify-content: space-between;
   padding: 0;
   margin-bottom: 40px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
   min-height: 49px;
 }
 
 .catalog-hotel-sorting-found {
-  width: 338px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
   padding: 0;
 }
 
@@ -747,13 +749,16 @@ body {
 
 .select-control {
   width: 292px;
-  margin-right: auto;
-  padding: 0;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  padding: 14px 20px;
   border: 2px solid var(--color-beige);
   border-radius: 4px;
+  appearance: none;
+  background: url(../images/catalog/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .sort-list {
@@ -845,10 +850,11 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  padding: 8px 20px;
+  padding: 8px 26px;
   text-align: center;
   background-color: var(--color-brown);
   color: var(--color-white);
+  border-radius: 4px;
 }
 
 .button-card {
@@ -858,6 +864,8 @@ body {
   background-color: var(--color-blue);
   color: var(--color-white);
   border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
 }
 
 .button-card-current {
@@ -880,6 +888,7 @@ body {
   background-color: var(--color-light-beige);
   text-align: center;
   text-transform: uppercase;
+  border-radius: 4px;
 }
 
 /*Пагинация*/
