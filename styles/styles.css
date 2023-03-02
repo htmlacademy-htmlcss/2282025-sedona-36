@@ -3,12 +3,25 @@
   --color-black: #000000;
   --color-brown: #756157;
   --color-blue: #82b3d3;
+  --color-blue2: #83b3d3;
   --color-gray: #242424;
   --color-beige: #e6e6e6;
   --color-green: #7db54f;
   --color-light-beige: #f2f2f2;
+
+  --color-blue-button-default-active: #82b3d3;
+  --color-blue-button-hover-focus: #68a2ca;
+  --color-button-disabled: #e5e5e5;
+
+  --color-green-button-default-active: #7db54f;
+  --color-green-button-hover-focus: #6c9e42;
+
+  --color-brown-button-default-active: #756157;
+  --color-brown-button-hover-focus: #615048;
+
 }
 
+/* Шрифты */
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
@@ -45,6 +58,116 @@
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  background-color: var(--color-blue-button-default-active);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+}
+
+.button:default {
+  background-color: var(--color-blue-button-default-active);
+  color: var(--color-white);
+}
+
+.button:hover {
+  background-color: var(--color-blue-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button:focus {
+  background-color: var(--color-blue-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button:active {
+  background-color: var(--color-blue-button-default-active);
+  color: var(--color-white);
+  opacity: 0.3;
+}
+
+.button:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-white);
+  opacity: 0.1;
+}
+
+/* Общий класс для кнопок-ссылок */
+.button-brown {
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--color-brown-button-default-active);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+}
+
+.button-brown:default {
+  background-color: var(--color-brown-button-default-active);
+  color: var(--color-white);
+}
+
+.button-brown:hover {
+  background-color: var(--color-brown-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button-brown:focus {
+  background-color: var(--color-brown-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button-brown:active {
+  background-color: var(--color-brown-button-default-active);
+  color: var(--color-white);
+  opacity: 0.3;
+}
+
+.button-brown:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-white);
+  opacity: 0.1;
+}
+
+/* Общий класс для нажатых кнопок */
+.button-card-current {
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--color-green-button-default-active);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+}
+
+.button-card-current:default {
+  background-color: var(--color-green-button-default-active);
+  color: var(--color-white);
+}
+
+.button-card-current:hover {
+  background-color: var(--color-green-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button-card-current:focus {
+  background-color: var(--color-green-button-hover-focus);
+  color: var(--color-white);
+}
+
+.button-card-current:active {
+  background-color: var(--color-green-button-default-active);
+  color: var(--color-white);
+  opacity: 0.3;
+}
+
+.button-card-current:disabled {
+  background-color: var(--color-button-disabled);
+  color: var(--color-white);
+  opacity: 0.1;
 }
 
 *,
@@ -163,10 +286,8 @@ body {
   font-weight: 700;
   padding: 8px 34px;
   margin: 14px 0 14px 20px;
-  border-radius: 4px;
-  background-color: var(--color-brown);
-  color: var(--color-white);
 }
+
 
 /*Херо-блок*/
 .hero {
@@ -180,6 +301,7 @@ body {
   position: relative;
 }
 
+/*  доработать */
 .hero ::after {
   content: "";
   display: block;
@@ -234,7 +356,19 @@ body {
 }
 
 .advantages-item {
+  position: relative;
   background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item::before {
+  content: "";
+  position: absolute;
+  left: 42.5%;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-black);
+  opacity: 0.3;
 }
 
 .advantages-item-container {
@@ -251,8 +385,33 @@ body {
   display: flex;
   background-color: var(--color-blue);
   color: var(--color-white);
+  position: relative;
 }
 
+.advantages-item-blue::before {
+  content: "";
+  position: absolute;
+  left: 14.5%;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-white);
+  opacity: 0.3;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+.reverse::before {
+  content: "";
+  position: absolute;
+  left: 81%;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-white);
+  opacity: 0.3;
+}
 .advantages-item-light-blue {
   background-color: rgba(131, 179, 211, 0.2);
 }
@@ -406,13 +565,9 @@ body {
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: var(--color-brown);
-  color: var(--color-white);
-  text-decoration: none;
   margin: 0 auto;
   max-width: 378px;
   padding: 8px 50px;
-  border-radius: 4px;
 }
 
 /*Подписка*/
@@ -477,10 +632,7 @@ body {
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
   max-width: 232px;
-  border: none;
   padding: 8px 50px;
   border-radius: 0 4px 4px 0;
 }
@@ -702,9 +854,6 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
-  border: none;
 }
 
 .reset-button {
@@ -714,8 +863,34 @@ body {
   line-height: 20px;
   font-weight: 700;
   background-color: transparent;
+}
+
+.reset-button:default {
+  background-color: transparent;
   color: var(--color-white);
-  border: none;
+}
+
+.reset-button:hover {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.reset-button:focus {
+  background-color: transparent;
+  border: 3px solid var(--color-blue2);
+  color: var(--color-white);
+}
+
+.reset-button:active {
+  background-color: transparent;
+  color: var(--color-white);
+  opacity: 0.3;
+}
+
+.reset-button:disabled {
+  background-color: transparent;
+  color: var(--color-white);
+  opacity: 0.1;
 }
 
 /*Сортировка гостиниц*/
@@ -851,27 +1026,17 @@ body {
   line-height: 20px;
   font-weight: 700;
   padding: 8px 26px;
-  text-align: center;
-  background-color: var(--color-brown);
-  color: var(--color-white);
-  border-radius: 4px;
 }
 
 .button-card {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
-  border: none;
   padding: 8px 20px;
-  border-radius: 4px;
 }
 
 .button-card-current {
-  background-color: var(--color-green);
-  color: var(--color-white);
-  border-color: var(--color-green);
+  padding: 8px 18px;
 }
 
 .stars {
@@ -918,6 +1083,9 @@ body {
 }
 
 .pagination-link-more {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
   background-color: var(--color-white);
   color: var(--color-black);
 }
