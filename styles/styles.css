@@ -4,21 +4,15 @@
   --color-brown: #756157;
   --color-blue: #82b3d3;
   --color-blue2: #83b3d3;
+  --color-blue3: #68a2ca;
   --color-gray: #242424;
   --color-beige: #e6e6e6;
   --color-green: #7db54f;
+  --color-green2: #6c9e42;
   --color-light-beige: #f2f2f2;
-
-  --color-blue-button-default-active: #82b3d3;
-  --color-blue-button-hover-focus: #68a2ca;
+  --color-dark-blue: #3f5e72;
+  --color-brown2: #615048;
   --color-button-disabled: #e5e5e5;
-
-  --color-green-button-default-active: #7db54f;
-  --color-green-button-hover-focus: #6c9e42;
-
-  --color-brown-button-default-active: #756157;
-  --color-brown-button-hover-focus: #615048;
-
 }
 
 /* Шрифты */
@@ -58,29 +52,29 @@
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--color-blue-button-default-active);
+  background-color: var(--color-blue);
   color: var(--color-white);
   border: none;
   border-radius: 4px;
 }
 
 .button:default {
-  background-color: var(--color-blue-button-default-active);
+  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
 .button:hover {
-  background-color: var(--color-blue-button-hover-focus);
+  background-color: var(--color-blue3);
   color: var(--color-white);
 }
 
 .button:focus {
-  background-color: var(--color-blue-button-hover-focus);
+  background-color: var(--color-blue3);
   color: var(--color-white);
 }
 
 .button:active {
-  background-color: var(--color-blue-button-default-active);
+  background-color: var(--color-blue);
   color: var(--color-white);
   opacity: 0.3;
 }
@@ -91,35 +85,36 @@
   opacity: 0.1;
 }
 
+
 /* Общий класс для кнопок-ссылок */
 .button-brown {
   font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--color-brown-button-default-active);
+  background-color: var(--color-brown);
   color: var(--color-white);
   border: none;
   border-radius: 4px;
 }
 
 .button-brown:default {
-  background-color: var(--color-brown-button-default-active);
+  background-color: var(--color-brown);
   color: var(--color-white);
 }
 
 .button-brown:hover {
-  background-color: var(--color-brown-button-hover-focus);
+  background-color: var(--color-brown2);
   color: var(--color-white);
 }
 
 .button-brown:focus {
-  background-color: var(--color-brown-button-hover-focus);
+  background-color: var(--color-brown2);
   color: var(--color-white);
 }
 
 .button-brown:active {
-  background-color: var(--color-brown-button-default-active);
+  background-color: var(--color-brown);
   color: var(--color-white);
   opacity: 0.3;
 }
@@ -136,7 +131,7 @@
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--color-green-button-default-active);
+  background-color: var(--color-green);
   color: var(--color-white);
   border: none;
   border-radius: 4px;
@@ -144,22 +139,22 @@
 }
 
 .button-card-current:default {
-  background-color: var(--color-green-button-default-active);
+  background-color: var(--color-green);
   color: var(--color-white);
 }
 
 .button-card-current:hover {
-  background-color: var(--color-green-button-hover-focus);
+  background-color: var(--color-green2);
   color: var(--color-white);
 }
 
 .button-card-current:focus {
-  background-color: var(--color-green-button-hover-focus);
+  background-color: var(--color-green2);
   color: var(--color-white);
 }
 
 .button-card-current:active {
-  background-color: var(--color-green-button-default-active);
+  background-color: var(--color-green);
   color: var(--color-white);
   opacity: 0.3;
 }
@@ -218,6 +213,8 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+
+  position: relative;
 }
 
 .page-header-logo-link {
@@ -262,13 +259,14 @@ body {
 }
 
 .navigation-user-link {
-  position: relative;
   display: block;
   min-width: 44px;
   min-height: 64px;
   text-align: center;
   color: var(--color-black);
   text-decoration: none;
+
+  position: relative;
 }
 
 .navigation-icon {
@@ -297,12 +295,15 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   padding: 51px 0 82px 0;
-
-  position: relative;
 }
 
-/*  доработать */
-.hero ::after {
+.hero-logo {
+  display: block;
+  margin: 0 auto;
+}
+
+/*Преимущество*/
+.advantages-container::after {
   content: "";
   display: block;
   background: url(../images/index/step.svg);
@@ -312,22 +313,18 @@ body {
   height: 57px;
   position: absolute;
   right: 0;
-  bottom: 0;
-  left: 0;
+  bottom: 261px;
+  left: -272px;
   margin: 0;
   padding: 0;
 }
 
-.hero-logo {
-  display: block;
-  margin: 0 auto;
-}
-
-/*Преимущество*/
 .advantages-container {
   max-width: 655px;
-  margin: 69px auto;
+  padding: 69px 0;
+  margin: 0 auto;
   text-align: center;
+  position: relative;
 }
 
 .advantages-slogan {
@@ -356,19 +353,7 @@ body {
 }
 
 .advantages-item {
-  position: relative;
   background-color: rgba(131, 179, 211, 0.12);
-}
-
-.advantages-item::before {
-  content: "";
-  position: absolute;
-  left: 42.5%;
-  top: 50%;
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-black);
-  opacity: 0.3;
 }
 
 .advantages-item-container {
@@ -379,39 +364,37 @@ body {
   min-height: 385px;
   height: 100%;
   padding: 20px 85px;
+
+  position: relative;
+}
+
+ .advantages-item-container::before {
+  content: "";
+  position: absolute;
+  left: 200px;
+  margin-left: -30px;
+  bottom: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-black);
+  opacity: 0.3;
+}
+/* написала это методом просто пробовала все подряд, работает но себе не могу сформулировать как?! */
+.advantages-item-container:not(:last-child):before {
+  background-color: var(--color-white);
+  opacity: 0.3;
 }
 
 .advantages-item-blue {
   display: flex;
   background-color: var(--color-blue);
   color: var(--color-white);
-  position: relative;
-}
-
-.advantages-item-blue::before {
-  content: "";
-  position: absolute;
-  left: 14.5%;
-  top: 50%;
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-white);
-  opacity: 0.3;
 }
 
 .reverse {
   flex-direction: row-reverse;
 }
-.reverse::before {
-  content: "";
-  position: absolute;
-  left: 81%;
-  top: 50%;
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-white);
-  opacity: 0.3;
-}
+
 .advantages-item-light-blue {
   background-color: rgba(131, 179, 211, 0.2);
 }
@@ -468,9 +451,8 @@ body {
   list-style: none;
 }
 
-.addition-item-svg-house {
-  display: inline-block;
-  background-image: url(../images/index/house.svg);
+.house::after {
+    background-image: url(../images/index/house.svg);
   width: 75px;
   height: 72px;
   background-repeat: no-repeat;
@@ -521,8 +503,19 @@ body {
   text-transform: uppercase;
   margin: 0 0 30px 0;
   padding: 0;
+  position: relative;
 }
-
+/*  остановилась здесь!!!!!! */
+.addition-title::after {
+  display: block;
+  position: absolute;
+  background-image: url(../images/index/house.svg);
+width: 75px;
+height: 72px;
+background-repeat: no-repeat;
+background-position: center;
+margin: 0 auto 30px auto;
+}
 .addition-description {
   font-size: 18px;
   line-height: 21px;
@@ -927,13 +920,33 @@ body {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
-  padding: 14px 20px;
+  padding: 12px 20px;
   border: 2px solid var(--color-beige);
   border-radius: 4px;
+
   appearance: none;
   background: url(../images/catalog/arrow-down.svg);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right 20px center;
+  padding-right: 40px;
+}
+
+.select-control:hover {
+  border-color: var(--color-blue-button-hover-focus);
+}
+
+.select-control:focus {
+  border-color: var(--color-blue-button-hover-focus);
+  outline: none;
+}
+
+.select-control:active {
+  border-color: var(--color-dark-blue);
+}
+
+.select-control:disabled {
+  border-color: var(--color-black);
+  opacity: 0.3;
 }
 
 .sort-list {
@@ -966,7 +979,8 @@ body {
 
 .product-catalog-container {
   margin: 0;
-  margin-bottom: 80px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-beige);
 }
 
 .product-list {
@@ -1063,6 +1077,7 @@ body {
   gap: 8px;
   padding: 0;
   margin: 0;
+  margin-top: 40px;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
