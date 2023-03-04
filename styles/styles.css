@@ -2,6 +2,8 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-brown: #756157;
+  --color-brown2: #615048;
+  --color-brown3: #756257;
   --color-blue: #82b3d3;
   --color-blue2: #83b3d3;
   --color-blue3: #68a2ca;
@@ -11,7 +13,6 @@
   --color-green2: #6c9e42;
   --color-light-beige: #f2f2f2;
   --color-dark-blue: #3f5e72;
-  --color-brown2: #615048;
   --color-button-disabled: #e5e5e5;
 }
 
@@ -54,13 +55,7 @@
   text-align: center;
   background-color: var(--color-blue);
   color: var(--color-white);
-  border: none;
   border-radius: 4px;
-}
-
-.button:default {
-  background-color: var(--color-blue);
-  color: var(--color-white);
 }
 
 .button:hover {
@@ -75,14 +70,12 @@
 
 .button:active {
   background-color: var(--color-blue);
-  color: var(--color-white);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button:disabled {
   background-color: var(--color-button-disabled);
-  color: var(--color-white);
-  opacity: 0.1;
+  color: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -98,11 +91,6 @@
   border-radius: 4px;
 }
 
-.button-brown:default {
-  background-color: var(--color-brown);
-  color: var(--color-white);
-}
-
 .button-brown:hover {
   background-color: var(--color-brown2);
   color: var(--color-white);
@@ -115,14 +103,12 @@
 
 .button-brown:active {
   background-color: var(--color-brown);
-  color: var(--color-white);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-brown:disabled {
   background-color: var(--color-button-disabled);
-  color: var(--color-white);
-  opacity: 0.1;
+  color: rgba(255, 255, 255, 0.1);
 }
 
 /* Общий класс для нажатых кнопок */
@@ -138,11 +124,6 @@
   padding: 8px 18px;
 }
 
-.button-card-current:default {
-  background-color: var(--color-green);
-  color: var(--color-white);
-}
-
 .button-card-current:hover {
   background-color: var(--color-green2);
   color: var(--color-white);
@@ -155,14 +136,12 @@
 
 .button-card-current:active {
   background-color: var(--color-green);
-  color: var(--color-white);
-  opacity: 0.3;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .button-card-current:disabled {
   background-color: var(--color-button-disabled);
-  color: var(--color-white);
-  opacity: 0.1;
+  color: rgba(255, 255, 255, 0.1);
 }
 
 *,
@@ -242,6 +221,20 @@ body {
   text-decoration: none;
 }
 
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current::after {
+  position: absolute;
+  content: "";
+  right: 16px;
+  left: 16px;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-brown3);
+}
+
 /* Навигация правая */
 .navigation-right {
   display: flex;
@@ -278,6 +271,29 @@ body {
   margin: auto;
 }
 
+.favourites-circle {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+}
+
+.circle-number {
+  position: absolute;
+  display: flex;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border-radius: 10px;
+  margin: 11px 4px 33px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 .page-header-button {
   font-size: 16px;
   line-height: 20px;
@@ -285,7 +301,6 @@ body {
   padding: 8px 34px;
   margin: 14px 0 14px 20px;
 }
-
 
 /*Херо-блок*/
 .hero {
@@ -303,6 +318,15 @@ body {
 }
 
 /*Преимущество*/
+.advantages-container {
+  max-width: 655px;
+  padding: 69px 0;
+  margin: 0 auto;
+  text-align: center;
+
+  position: relative;
+}
+
 .advantages-container::after {
   content: "";
   display: block;
@@ -317,14 +341,6 @@ body {
   left: -272px;
   margin: 0;
   padding: 0;
-}
-
-.advantages-container {
-  max-width: 655px;
-  padding: 69px 0;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
 }
 
 .advantages-slogan {
@@ -364,27 +380,7 @@ body {
   min-height: 385px;
   height: 100%;
   padding: 20px 85px;
-
-  position: relative;
 }
-
-.advantages-item-container::before {
-  content: "";
-  position: absolute;
-  left: 200px;
-  margin-left: -30px;
-  bottom: 50%;
-  width: 60px;
-  height: 2px;
-  background-color: var(--color-black);
-  opacity: 0.3;
-}
-
-/* как сделать первую и последнюю черту белой?
-.advantages-item-container:not(:last-child):before {
-  background-color: var(--color-white);
-  opacity: 0.3;
-}*/
 
 .advantages-item-blue {
   display: flex;
@@ -408,6 +404,21 @@ body {
   text-transform: uppercase;
   margin: 0 0 62px 0;
   padding: 0;
+
+  position: relative;
+}
+
+.advantages-title:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: -30px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-black);
+  /* как последний и первый псевдоэлемент сделать другим цветом? */
+  opacity: 0.3;
 }
 
 .advantages-description {
@@ -476,7 +487,8 @@ body {
   display: inline-block;
   background-image: url(../images/index/souvenir.svg);
   width: 75px;
-  height: 76px; /*увеличила высоту, обрезался бантик у сувенира */
+  height: 76px;
+  /*увеличила высоту, обрезAлся бантик у сувенира */
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto 30px auto;
@@ -506,6 +518,7 @@ body {
   padding: 0;
   position: relative;
 }
+
 .addition-description {
   font-size: 18px;
   line-height: 21px;
@@ -563,7 +576,7 @@ body {
 .subscribe-bacground {
   background-color: var(--color-blue);
   background-image: url("../images/index/subscribe-background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   color: var(--color-white);
 }
@@ -606,42 +619,49 @@ body {
   background-color: var(--color-light-beige);
   font-family: inherit;
   width: 100%;
-  border: none;
-  padding: 14px 20px;
+  border: 3px solid transparent;
+  padding: 11px 20px;
   border-radius: 4px 0 0 4px;
+  outline: none;
+  color: rgba(0, 0, 0, 0.6);
 }
-.subscribe-field:disabled {
-  color:var(--color-black);
-  opacity: 0.6;
-}
+
 .subscribe-field:hover {
   background-color: var(--color-beige);
-  color:var(--color-black);
-  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.6);
 }
+
 .subscribe-field:focus {
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
   background-color: var(--color-beige);
-  color:var(--color-black);
-  opacity: 0.6;
-  outline: 3px solid var(--color-blue2);
-  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.6);
+  border: 3px solid var(--color-blue2);
+  outline: none;
 }
+
 .subscribe-field:active {
   background-color: var(--color-light-beige);
-  color:var(--color-black);
-  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  border: 3px solid var(--color-black);
   border-radius: 4px;
 }
+
+.subscribe-field:disabled {
+  background-color: var(--color-light-beige);
+  opacity: 0.6;
+}
+
 .subscribe-button {
+  cursor: pointer;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
   max-width: 232px;
-  padding: 8px 50px;
+  padding: 5px 50px;
   border-radius: 0 4px 4px 0;
+  border: 3px solid transparent;
 }
 
 /*Подвал*/
@@ -662,13 +682,27 @@ body {
 }
 
 .footer-social-link {
-  position: relative;
   display: flex;
   min-width: 47px;
   min-height: 40px;
   text-align: center;
-  color: var(--color-black);
+  color: var(--color-blue2);
   text-decoration: none;
+
+  position: relative;
+}
+
+.footer-social-link:hover {
+  color: var(--color-blue3);
+}
+
+.footer-social-link:focus {
+  color: var(--color-blue3);
+}
+
+.footer-social-link:active {
+  color: var(--color-blue3);
+  opacity: 0.3;
 }
 
 .footer-social-logo {
@@ -698,17 +732,44 @@ body {
   text-decoration: none;
 }
 
+.footer-contact-phone:hover {
+  color: var(--color-brown)
+}
+
+.footer-contact-phone:focus {
+  color: var(--color-brown);
+}
+
+.footer-contact-phone:active {
+  color: var(--color-brown);
+  opacity: 0.3;
+}
+
 .footer-developer-logo {
   display: flex;
 }
 
 .footer-developer-logo-link {
-  position: relative;
   min-width: 115px;
   min-height: 34px;
   text-align: center;
   color: var(--color-black);
   text-decoration: none;
+
+  position: relative;
+}
+
+.footer-developer-logo-link:hover {
+  color: var(--color-brown);
+}
+
+.footer-developer-logo-link:focus {
+  color: var(--color-brown);
+}
+
+.footer-developer-logo-link:active {
+  color: var(--color-brown);
+  opacity: 0.3;
 }
 
 .footer-developer-logo-svg {
@@ -726,7 +787,7 @@ body {
   padding: 35px 70px 70px 70px;
   background-color: var(--color-blue);
   background-image: url("../images/catalog/filtr-backgraund.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -748,7 +809,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -759,18 +820,36 @@ body {
 }
 
 .breadcrumbs-link {
-  display: block;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 13px;
+  min-height: 21px;
+  color: var(--color-white);
+
+  position: relative;
 }
 
-.breadcrumbs-svg-home {
-  display: inline-block;
-  background-image: url(../images/catalog/home.svg);
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #7db54f;
+.breadcrumbs-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: -6px;
+}
+
+.breadcrumbs-link:hover {
+  color: rgba(250, 250, 250, 0.6);
+}
+
+.breadcrumbs-link:focus {
+  color: var(--color-white);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .breadcrumbs-svg-arrow {
@@ -802,6 +881,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: var(--color-white);
 }
 
 .catalog-filter-title {
@@ -857,35 +937,40 @@ body {
 /* Кнопки фильтры */
 .choice-button {
   margin: 0;
-  padding: 8px 50px;
+  padding: 4px 50px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  cursor: pointer;
+  border: 2px solid;
+  border-color: transparent;
 }
 
 .reset-button {
+  cursor: pointer;
   margin: 0;
-  padding: 8px 50px;
+  padding: 4px 50px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
   background-color: transparent;
-}
-
-.reset-button:default {
-  background-color: transparent;
   color: var(--color-white);
+  border: 2px solid;
+  border-color: transparent;
 }
 
 .reset-button:hover {
   background-color: transparent;
-  color: var(--color-white);
+  border: 2px solid var(--color-blue2);
+  color: rgba(250, 250, 250, 0.1);
+  outline: none;
 }
 
 .reset-button:focus {
   background-color: transparent;
-  border: 3px solid var(--color-blue2);
+  border: 2px solid var(--color-blue2);
   color: var(--color-white);
+  box-sizing: border-box;
 }
 
 .reset-button:active {
@@ -930,6 +1015,7 @@ body {
 }
 
 .select-control {
+  cursor: pointer;
   width: 292px;
   font-size: 18px;
   line-height: 21px;
@@ -946,11 +1032,11 @@ body {
 }
 
 .select-control:hover {
-  border-color: var(--color-blue-button-hover-focus);
+  border-color: var(--color-blue3);
 }
 
 .select-control:focus {
-  border-color: var(--color-blue-button-hover-focus);
+  border-color: var(--color-blue3);
   outline: none;
 }
 
@@ -980,6 +1066,19 @@ body {
   min-height: 48px;
   border: 2px solid var(--color-beige);
   border-radius: 4px;
+}
+
+.sort-link:hover {
+  border-color: var(--color-black);
+}
+
+.sort-link:focus {
+  border-color: var(--color-blue3);
+  outline: none;
+}
+
+.sort-link:active {
+  border-color: var(--color-black);
 }
 
 .sort-link-current {
@@ -1057,10 +1156,12 @@ body {
 }
 
 .button-card {
+  cursor: pointer;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
   padding: 8px 20px;
+  border: none;
 }
 
 .button-card-current {
@@ -1111,6 +1212,21 @@ body {
   border-radius: 4px;
 }
 
+.pagination-link:hover {
+  background-color: var(--color-blue3);
+  border: 1px solid var(--color-blue);
+}
+
+.pagination-link:focus {
+  background-color: var(--color-blue3);
+  border: 1px solid var(--color-blue);
+  outline: none;
+}
+
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3)
+}
+
 .pagination-link-more {
   font-size: 22px;
   line-height: 26px;
@@ -1119,9 +1235,41 @@ body {
   color: var(--color-black);
 }
 
+.pagination-link-more:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: none;
+}
+
+.pagination-link-more:focus {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.pagination-link-more:active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
 .pagination-current {
   text-decoration: none;
   text-transform: uppercase;
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+}
+
+.pagination-current:hover {
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+  border: none;
+}
+
+.pagination-current:focus {
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+}
+
+.pagination-current:active {
   background-color: var(--color-light-beige);
   color: var(--color-black);
 }
