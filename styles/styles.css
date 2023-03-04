@@ -368,7 +368,7 @@ body {
   position: relative;
 }
 
- .advantages-item-container::before {
+.advantages-item-container::before {
   content: "";
   position: absolute;
   left: 200px;
@@ -379,11 +379,12 @@ body {
   background-color: var(--color-black);
   opacity: 0.3;
 }
-/* написала это методом просто пробовала все подряд, работает но себе не могу сформулировать как?! */
+
+/* как сделать первую и последнюю черту белой?
 .advantages-item-container:not(:last-child):before {
   background-color: var(--color-white);
   opacity: 0.3;
-}
+}*/
 
 .advantages-item-blue {
   display: flex;
@@ -451,8 +452,9 @@ body {
   list-style: none;
 }
 
-.house::after {
-    background-image: url(../images/index/house.svg);
+.addition-item-svg-house {
+  display: inline-block;
+  background-image: url(../images/index/house.svg);
   width: 75px;
   height: 72px;
   background-repeat: no-repeat;
@@ -474,8 +476,7 @@ body {
   display: inline-block;
   background-image: url(../images/index/souvenir.svg);
   width: 75px;
-  height: 72px;
-  /*обрезается сувенир*/
+  height: 76px; /*увеличила высоту, обрезался бантик у сувенира */
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto 30px auto;
@@ -504,17 +505,6 @@ body {
   margin: 0 0 30px 0;
   padding: 0;
   position: relative;
-}
-/*  остановилась здесь!!!!!! */
-.addition-title::after {
-  display: block;
-  position: absolute;
-  background-image: url(../images/index/house.svg);
-width: 75px;
-height: 72px;
-background-repeat: no-repeat;
-background-position: center;
-margin: 0 auto 30px auto;
 }
 .addition-description {
   font-size: 18px;
@@ -620,7 +610,31 @@ margin: 0 auto 30px auto;
   padding: 14px 20px;
   border-radius: 4px 0 0 4px;
 }
-
+.subscribe-field:disabled {
+  color:var(--color-black);
+  opacity: 0.6;
+}
+.subscribe-field:hover {
+  background-color: var(--color-beige);
+  color:var(--color-black);
+  opacity: 0.6;
+}
+.subscribe-field:focus {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  background-color: var(--color-beige);
+  color:var(--color-black);
+  opacity: 0.6;
+  outline: 3px solid var(--color-blue2);
+  border-radius: 4px;
+}
+.subscribe-field:active {
+  background-color: var(--color-light-beige);
+  color:var(--color-black);
+  border: 2px solid var(--color-black);
+  border-radius: 4px;
+}
 .subscribe-button {
   font-size: 20px;
   line-height: 36px;
