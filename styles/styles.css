@@ -2,14 +2,21 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-brown: #756157;
+  --color-brown2: #615048;
+  --color-brown3: #756257;
   --color-blue: #82b3d3;
+  --color-blue2: #83b3d3;
+  --color-blue3: #68a2ca;
   --color-gray: #242424;
   --color-beige: #e6e6e6;
   --color-green: #7db54f;
+  --color-green2: #6c9e42;
   --color-light-beige: #f2f2f2;
+  --color-dark-blue: #3f5e72;
+  --color-button-disabled: #e5e5e5;
 }
 
-
+/* Шрифты */
 @font-face {
   font-family: "PT Sans";
   font-style: normal;
@@ -24,42 +31,6 @@
   font-weight: 700;
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-body {
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  max-width: 1280px;
-  padding: 0 40px;
-  margin: 0 auto;
-  font-family: "PT Sans", "Arial", sans-serif;
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 400;
-  background-color: var(--color-light-beige);
-  color: var(--color-black);
-}
-
-.main-container {
-  flex-grow: 1;
-  background-color: var(--color-white);
 }
 
 /* Отключает отображение .visually-hidden  */
@@ -78,10 +49,138 @@ body {
 
 /* Общий класс для кнопок */
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.button:hover {
+  background-color: var(--color-blue3);
+  color: var(--color-white);
+}
+
+.button:focus {
+  background-color: var(--color-blue3);
+  color: var(--color-white);
+}
+
+.button:active {
+  background-color: var(--color-blue);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button:disabled {
+  background-color: var(--color-button-disabled);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Общий класс для кнопок-ссылок */
+.button-brown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-brown);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.button-brown:hover {
+  background-color: var(--color-brown2);
+  color: var(--color-white);
+}
+
+.button-brown:focus {
+  background-color: var(--color-brown2);
+  color: var(--color-white);
+}
+
+.button-brown:active {
+  background-color: var(--color-brown);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-brown:disabled {
+  background-color: var(--color-button-disabled);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* Общий класс для нажатых кнопок */
+.button-card-current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PT Sans", "Arial", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.button-card-current:hover {
+  background-color: var(--color-green2);
+  color: var(--color-white);
+}
+
+.button-card-current:focus {
+  background-color: var(--color-green2);
+  color: var(--color-white);
+}
+
+.button-card-current:active {
+  background-color: var(--color-green);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-card-current:disabled {
+  background-color: var(--color-button-disabled);
+  color: rgba(255, 255, 255, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+}
+
+.main-container {
+  flex-grow: 1;
+  background-color: var(--color-white);
 }
 
 /*Шапка*/
@@ -101,6 +200,8 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+
+  position: relative;
 }
 
 .page-header-logo-link {
@@ -109,7 +210,7 @@ body {
 }
 
 .navigation {
-  margin: 0 0 0 168px;
+  margin: 0 0 0 170px;
 }
 
 .navigation-list {
@@ -126,6 +227,20 @@ body {
   text-align: center;
   color: var(--color-black);
   text-decoration: none;
+}
+
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current::after {
+  position: absolute;
+  content: "";
+  right: 16px;
+  left: 16px;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-brown3);
 }
 
 /* Навигация правая */
@@ -145,22 +260,34 @@ body {
 }
 
 .navigation-user-link {
-  position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
   min-height: 64px;
   text-align: center;
   color: var(--color-black);
   text-decoration: none;
+
+  position: relative;
 }
 
-.navigation-icon {
+
+.circle-number {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+  display: flex;
+  height: 20px;
+  width: 20px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  top: 11px;
+  right: 4px;
 }
 
 .page-header-button {
@@ -168,9 +295,7 @@ body {
   line-height: 20px;
   font-weight: 700;
   padding: 8px 34px;
-  margin: 14px 0 14px 20px;
-  background-color: var(--color-brown);
-  color: var(--color-white);
+  margin: 0 0 0 14px;
 }
 
 /*Херо-блок*/
@@ -191,8 +316,27 @@ body {
 /*Преимущество*/
 .advantages-container {
   max-width: 655px;
-  margin: 69px auto;
+  padding: 69px 0;
+  margin: 0 auto;
   text-align: center;
+
+  position: relative;
+}
+
+.advantages-container::after {
+  content: "";
+  display: block;
+  background: url(../images/index/step.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 1200px;
+  height: 57px;
+  position: absolute;
+  right: 0;
+  bottom: 261px;
+  left: -272px;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages-slogan {
@@ -240,6 +384,10 @@ body {
   color: var(--color-white);
 }
 
+.reverse {
+  flex-direction: row-reverse;
+}
+
 .advantages-item-light-blue {
   background-color: rgba(131, 179, 211, 0.2);
 }
@@ -252,6 +400,24 @@ body {
   text-transform: uppercase;
   margin: 0 0 62px 0;
   padding: 0;
+
+  position: relative;
+}
+
+.advantages-title::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: -30px;
+  width: 60px;
+  height: 2px;
+  background-color: var(--color-black);
+  opacity: 0.3;
+}
+
+.advantages-item-blue .advantages-title::before {
+  background-color: var(--color-white);
 }
 
 .advantages-description {
@@ -297,40 +463,40 @@ body {
 }
 
 .addition-item-svg-house {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/house.svg);
   width: 75px;
   height: 72px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
+  margin-bottom: 30px;
 }
 
 .addition-item-svg-food {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/food.svg);
   width: 75px;
   height: 72px;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
 }
 
 .addition-item-svg-souvenir {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/souvenir.svg);
   width: 75px;
-  height: 72px;
-  /*обрезается сувенир*/
+  height: 76px;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
 }
 
 
 .addition-item-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 400px;
   min-height: 385px;
@@ -393,9 +559,6 @@ body {
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: var(--color-brown);
-  color: var(--color-white);
-  text-decoration: none;
   margin: 0 auto;
   max-width: 378px;
   padding: 8px 50px;
@@ -411,7 +574,7 @@ body {
 .subscribe-bacground {
   background-color: var(--color-blue);
   background-image: url("../images/index/subscribe-background.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   color: var(--color-white);
 }
@@ -454,20 +617,49 @@ body {
   background-color: var(--color-light-beige);
   font-family: inherit;
   width: 100%;
-  border: none;
-  padding: 14px 20px;
+  border: 3px solid transparent;
+  padding: 11px 20px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-field:hover {
+  background-color: var(--color-beige);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subscribe-field:focus {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  background-color: var(--color-beige);
+  color: rgba(0, 0, 0, 0.6);
+  border: 3px solid var(--color-blue2);
+  outline: none;
+}
+
+.subscribe-field:active {
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+  border: 3px solid var(--color-black);
+  border-radius: 4px;
+}
+
+.subscribe-field:disabled {
+  background-color: var(--color-light-beige);
+  opacity: 0.6;
 }
 
 .subscribe-button {
+  cursor: pointer;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
-  border-color: var(--color-blue);
-  width: 232px;
-  min-height: 52px;
-  border: none;
+  max-width: 232px;
+  padding: 5px 50px;
+  border-radius: 0 4px 4px 0;
+  border: 3px solid transparent;
 }
 
 /*Подвал*/
@@ -488,13 +680,27 @@ body {
 }
 
 .footer-social-link {
-  position: relative;
   display: flex;
   min-width: 47px;
   min-height: 40px;
   text-align: center;
-  color: var(--color-black);
+  color: var(--color-blue2);
   text-decoration: none;
+
+  position: relative;
+}
+
+.footer-social-link:hover {
+  color: var(--color-blue3);
+}
+
+.footer-social-link:focus {
+  color: var(--color-blue3);
+}
+
+.footer-social-link:active {
+  color: var(--color-blue3);
+  opacity: 0.3;
 }
 
 .footer-social-logo {
@@ -524,17 +730,44 @@ body {
   text-decoration: none;
 }
 
+.footer-contact-phone:hover {
+  color: var(--color-brown)
+}
+
+.footer-contact-phone:focus {
+  color: var(--color-brown);
+}
+
+.footer-contact-phone:active {
+  color: var(--color-brown);
+  opacity: 0.3;
+}
+
 .footer-developer-logo {
   display: flex;
 }
 
 .footer-developer-logo-link {
-  position: relative;
   min-width: 115px;
   min-height: 34px;
   text-align: center;
   color: var(--color-black);
   text-decoration: none;
+
+  position: relative;
+}
+
+.footer-developer-logo-link:hover {
+  color: var(--color-brown);
+}
+
+.footer-developer-logo-link:focus {
+  color: var(--color-brown);
+}
+
+.footer-developer-logo-link:active {
+  color: var(--color-brown);
+  opacity: 0.3;
 }
 
 .footer-developer-logo-svg {
@@ -552,7 +785,7 @@ body {
   padding: 35px 70px 70px 70px;
   background-color: var(--color-blue);
   background-image: url("../images/catalog/filtr-backgraund.jpg");
-  background-size: 100% auto;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -574,7 +807,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   font-size: 16px;
@@ -584,28 +817,49 @@ body {
   list-style: none;
 }
 
-.breadcrumbs-link {
-  display: block;
+.breadcrumbs-item {
+  position: relative;
+  margin: 0 28px 0 0;
   text-decoration: none;
 }
 
-.breadcrumbs-svg-home {
-  display: inline-block;
-  background-image: url(../images/catalog/home.svg);
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #7db54f;
-}
-
-.breadcrumbs-svg-arrow {
-  display: inline-block;
-  background-image: url(../images/catalog/arrow.svg);
+.breadcrumbs-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
   width: 7px;
   height: 10px;
+  background-image: url(../images/catalog/arrow.svg);
   background-repeat: no-repeat;
   background-position: center;
+  top: 50%;
+  left: 22px;
+  margin-top: -5px;
+}
+
+.breadcrumbs-link {
+  display: flex;
+  color: var(--color-white);
+}
+
+.breadcrumbs-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: -7px;
+}
+
+.breadcrumbs-link:hover {
+  color: rgba(250, 250, 250, 0.6);
+}
+
+.breadcrumbs-link:focus {
+  color: var(--color-white);
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .catalog-hotel-filters {
@@ -628,6 +882,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: var(--color-white);
 }
 
 .catalog-filter-title {
@@ -683,24 +938,52 @@ body {
 /* Кнопки фильтры */
 .choice-button {
   margin: 0;
-  padding: 8px 50px;
+  padding: 4px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
-  border: none;
+  cursor: pointer;
+  border: 2px solid;
+  border-color: transparent;
 }
 
 .reset-button {
+  cursor: pointer;
   margin: 0;
-  padding: 8px 50px;
+  padding: 4px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
   background-color: transparent;
   color: var(--color-white);
-  border: none;
+  border: 2px solid;
+  border-color: transparent;
+}
+
+.reset-button:hover {
+  background-color: transparent;
+  border: 2px solid var(--color-blue2);
+  color: rgba(250, 250, 250, 0.1);
+  outline: none;
+}
+
+.reset-button:focus {
+  background-color: transparent;
+  border: 2px solid var(--color-blue2);
+  color: var(--color-white);
+  box-sizing: border-box;
+}
+
+.reset-button:active {
+  background-color: transparent;
+  color: var(--color-white);
+  opacity: 0.3;
+}
+
+.reset-button:disabled {
+  background-color: transparent;
+  color: var(--color-white);
+  opacity: 0.1;
 }
 
 /*Сортировка гостиниц*/
@@ -713,14 +996,16 @@ body {
   justify-content: space-between;
   padding: 0;
   margin-bottom: 40px;
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 700;
   min-height: 49px;
 }
 
 .catalog-hotel-sorting-found {
-  width: 338px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
   padding: 0;
 }
 
@@ -731,12 +1016,38 @@ body {
 }
 
 .select-control {
+  cursor: pointer;
   width: 292px;
-  margin-right: auto;
-  padding: 0;
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  padding: 12px 20px;
+  border: 2px solid var(--color-beige);
+  border-radius: 4px;
+
+  appearance: none;
+  background: url(../images/catalog/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 40px;
+}
+
+.select-control:hover {
+  border-color: var(--color-blue3);
+}
+
+.select-control:focus {
+  border-color: var(--color-blue3);
+  outline: none;
+}
+
+.select-control:active {
+  border-color: var(--color-dark-blue);
+}
+
+.select-control:disabled {
+  border-color: var(--color-black);
+  opacity: 0.3;
 }
 
 .sort-list {
@@ -748,14 +1059,31 @@ body {
   list-style: none;
 }
 
-.sort-item {
-  background-color: var(--color-light-beige);
-}
-
 .sort-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 48px;
   min-height: 48px;
+  border: 2px solid var(--color-beige);
+  border-radius: 4px;
+}
+
+.sort-link:hover {
+  border-color: var(--color-black);
+}
+
+.sort-link:focus {
+  border-color: var(--color-blue3);
+  outline: none;
+}
+
+.sort-link:active {
+  border-color: var(--color-black);
+}
+
+.sort-link-current {
+  border-color: var(--color-black);
 }
 
 /*Каталог*/
@@ -765,7 +1093,8 @@ body {
 
 .product-catalog-container {
   margin: 0;
-  margin-bottom: 80px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--color-beige);
 }
 
 .product-list {
@@ -778,6 +1107,7 @@ body {
 }
 
 .product-card {
+  display: grid;
   padding: 20px;
   font-size: 18px;
   line-height: 21px;
@@ -787,25 +1117,26 @@ body {
 }
 
 .product-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-card-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  gap: 16px;
+  gap: 16px 20px;
+  margin-top: auto;
 }
 
 .product-card-link {
   grid-column: 1/-1;
-}
-
-.product-card-title-link {
-  grid-column: 1/-1;
   text-decoration: none;
+  margin-bottom: auto;
 }
 
-/* нужно указывать object-fit и width? */
 .product-card-img {
   display: block;
-  object-fit: contain;
   width: 100%;
 }
 
@@ -815,6 +1146,7 @@ body {
   line-height: 28px;
   font-weight: 700;
   margin: 0;
+  margin-top: 16px;
   padding: 0;
 }
 
@@ -829,35 +1161,40 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  padding: 8px 20px;
-  text-align: center;
-  background-color: var(--color-brown);
-  color: var(--color-white);
+  padding: 8px
 }
 
 .button-card {
+  cursor: pointer;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  background-color: var(--color-blue);
-  color: var(--color-white);
+  padding: 8px;
   border: none;
 }
 
 .button-card-current {
-  background-color: var(--color-green);
-  color: var(--color-white);
-  border-color: var(--color-green);
+  padding: 8px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  padding: 9px 22px 8px 23px;
+  padding: 9px 0 8px 0;
   background-color: var(--color-light-beige);
   text-align: center;
   text-transform: uppercase;
+  border-radius: 4px;
 }
 
 /*Пагинация*/
@@ -867,6 +1204,7 @@ body {
   gap: 8px;
   padding: 0;
   margin: 0;
+  margin-top: 40px;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
@@ -886,7 +1224,41 @@ body {
   border-radius: 4px;
 }
 
+.pagination-link:hover {
+  background-color: var(--color-blue3);
+  border: 1px solid var(--color-blue);
+}
+
+.pagination-link:focus {
+  background-color: var(--color-blue3);
+  border: 1px solid var(--color-blue);
+  outline: none;
+}
+
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3)
+}
+
 .pagination-link-more {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.pagination-link-more:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: none;
+}
+
+.pagination-link-more:focus {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.pagination-link-more:active {
   background-color: var(--color-white);
   color: var(--color-black);
 }
@@ -894,6 +1266,22 @@ body {
 .pagination-current {
   text-decoration: none;
   text-transform: uppercase;
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+}
+
+.pagination-current:hover {
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+  border: none;
+}
+
+.pagination-current:focus {
+  background-color: var(--color-light-beige);
+  color: var(--color-black);
+}
+
+.pagination-current:active {
   background-color: var(--color-light-beige);
   color: var(--color-black);
 }
