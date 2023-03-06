@@ -517,15 +517,6 @@ body {
   padding: 0;
 }
 
-/* .addition-title::after {
-  content: "";
-  display: flex;
-  position: absolute;
-  background-image: url(../images/index/house.svg);
-  width: 75px;
-  height: 72px;
-  background-position: center;
-} */
 .addition-description {
   font-size: 18px;
   line-height: 21px;
@@ -1193,10 +1184,13 @@ body {
 }
 
 .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  padding: 9px 22px 8px 23px;
+  padding: 9px 0 8px 0;
   background-color: var(--color-light-beige);
   text-align: center;
   text-transform: uppercase;
