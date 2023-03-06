@@ -252,7 +252,9 @@ body {
 }
 
 .navigation-user-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
   min-height: 64px;
   text-align: center;
@@ -262,21 +264,6 @@ body {
   position: relative;
 }
 
-.navigation-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-}
-
-.favourites-circle {
-  width: 20px;
-  height: 20px;
-
-  position: relative;
-}
 
 .circle-number {
   position: absolute;
@@ -289,9 +276,10 @@ body {
   color: var(--color-white);
   background-color: var(--color-green);
   border-radius: 10px;
-  margin: 11px 4px 33px 20px;
   align-items: center;
   justify-content: center;
+  top: 11px;
+  right: 4px;
 }
 
 .page-header-button {
@@ -299,7 +287,7 @@ body {
   line-height: 20px;
   font-weight: 700;
   padding: 8px 34px;
-  margin: 14px 0 14px 20px;
+  margin: 0 0 0 14px;
 }
 
 /*Херо-блок*/
@@ -408,7 +396,7 @@ body {
   position: relative;
 }
 
-.advantages-title:before {
+.advantages-title::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -417,8 +405,11 @@ body {
   width: 60px;
   height: 2px;
   background-color: var(--color-black);
-  /* как последний и первый псевдоэлемент сделать другим цветом? */
   opacity: 0.3;
+}
+
+.advantages-item-blue .advantages-title::before {
+  background-color: var(--color-white);
 }
 
 .advantages-description {
@@ -464,40 +455,40 @@ body {
 }
 
 .addition-item-svg-house {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/house.svg);
   width: 75px;
   height: 72px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
+  margin-bottom: 30px;
 }
 
 .addition-item-svg-food {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/food.svg);
   width: 75px;
   height: 72px;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
 }
 
 .addition-item-svg-souvenir {
-  display: inline-block;
+  display: block;
   background-image: url(../images/index/souvenir.svg);
   width: 75px;
   height: 76px;
-  /*увеличила высоту, обрезAлся бантик у сувенира */
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto 30px auto;
 }
 
 
 .addition-item-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   width: 400px;
   min-height: 385px;
@@ -516,9 +507,17 @@ body {
   text-transform: uppercase;
   margin: 0 0 30px 0;
   padding: 0;
-  position: relative;
 }
 
+/* .addition-title::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  background-image: url(../images/index/house.svg);
+  width: 75px;
+  height: 72px;
+  background-position: center;
+} */
 .addition-description {
   font-size: 18px;
   line-height: 21px;
@@ -1106,6 +1105,7 @@ body {
 }
 
 .product-card {
+  display: grid;
   padding: 20px;
   font-size: 18px;
   line-height: 21px;
@@ -1115,9 +1115,16 @@ body {
 }
 
 .product-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-card-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 20px;
+  margin-top: auto;
 }
 
 .product-card-link {
