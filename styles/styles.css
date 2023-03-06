@@ -49,13 +49,16 @@
 
 /* Общий класс для кнопок */
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
   background-color: var(--color-blue);
   color: var(--color-white);
   border-radius: 4px;
+  padding: 8px;
 }
 
 .button:hover {
@@ -81,14 +84,17 @@
 
 /* Общий класс для кнопок-ссылок */
 .button-brown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
   background-color: var(--color-brown);
   color: var(--color-white);
   border: none;
   border-radius: 4px;
+  padding: 8px;
 }
 
 .button-brown:hover {
@@ -113,15 +119,17 @@
 
 /* Общий класс для нажатых кнопок */
 .button-card-current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PT Sans", "Arial", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center;
   background-color: var(--color-green);
   color: var(--color-white);
   border: none;
   border-radius: 4px;
-  padding: 8px 18px;
+  padding: 8px;
 }
 
 .button-card-current:hover {
@@ -818,16 +826,28 @@ body {
   list-style: none;
 }
 
-.breadcrumbs-link {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 13px;
-  min-height: 21px;
-  color: var(--color-white);
-
+.breadcrumbs-item {
   position: relative;
+  margin: 0 28px 0 0;
+  text-decoration: none;
+}
+
+.breadcrumbs-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 10px;
+  background-image: url(../images/catalog/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 50%;
+  left: 22px;
+  margin-top: -5px;
+}
+
+.breadcrumbs-link {
+  display: flex;
+  color: var(--color-white);
 }
 
 .breadcrumbs-icon {
@@ -836,7 +856,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  margin-top: -6px;
+  margin-top: -7px;
 }
 
 .breadcrumbs-link:hover {
@@ -849,15 +869,6 @@ body {
 
 .breadcrumbs-link:active {
   color: rgba(255, 255, 255, 0.3);
-}
-
-.breadcrumbs-svg-arrow {
-  display: inline-block;
-  background-image: url(../images/catalog/arrow.svg);
-  width: 7px;
-  height: 10px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .catalog-hotel-filters {
@@ -936,7 +947,7 @@ body {
 /* Кнопки фильтры */
 .choice-button {
   margin: 0;
-  padding: 4px 50px;
+  padding: 4px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -948,7 +959,7 @@ body {
 .reset-button {
   cursor: pointer;
   margin: 0;
-  padding: 4px 50px;
+  padding: 4px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -1159,7 +1170,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  padding: 8px 26px;
+  padding: 8px
 }
 
 .button-card {
@@ -1167,12 +1178,12 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  padding: 8px 20px;
+  padding: 8px;
   border: none;
 }
 
 .button-card-current {
-  padding: 8px 18px;
+  padding: 8px;
 }
 
 .stars {
