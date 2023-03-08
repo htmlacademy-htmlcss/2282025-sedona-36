@@ -215,6 +215,56 @@
       </a>
     </article>
   </footer>
+  <div class="modal-container "> <!--modal-container-close -->
+    <div class="modal modal-search-hotels">
+      <button class="modal-close-button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+      <section class="modal-content">
+        <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+        <form class="modal-content-form" action="https://echo.htmlacademy.ru/" method="post">
+          <div class="field-group arrival">
+            <label class="field-group-title" for="arrival-date">Дата Заезда:</label>
+            <input class="field arrival-date" id="arrival-date" type="text" name="arrival-date"
+              placeholder="Укажите дату">
+            <span class="error ">Сообщение об ошибке</span> <!--error-close -->
+          </div>
+          <div class="field-group departure">
+            <label class="field-group-title" for="departure-date">Дата Выезда:</label>
+            <input class="field departure-date" id="departure-date" type="text" name="departure-date"
+              placeholder="Укажите дату">
+            <span class="error ">Сообщение об ошибке</span>
+          </div>
+          <div class="field-group adults">
+            <label class="field-group-title" for="adults-number">Взрослые:</label>
+            <button class="field-group-button minus" type="button">
+            </button>
+            <input class="field number-adults" id="adults-number" type="number" name="adults" value="1">
+            <button class="field-group-button plus" type="button">
+            </button>
+          </div>
+          <div class="field-group children">
+            <label class="field-group-title" for="children-number">Дети:</label>
+            <span class="tooltip">
+              <button class="tooltip-toggle" type="button">
+                <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"><path d="M8 14A6 6 0 108 2a6 6 0 000 12zm1.27-8.73a1.27 1.27 0 11-2.54 0 1.27 1.27 0 012.54 0zm0 2.23V11H6.73V7.5h2.54z"/></svg>
+              </button>
+            </span>
+            <button class="field-group-button minus" type="button">
+            </button>
+            <input class="field number-children" id="children-number" type="number" name="number-children" value="0">
+            <button class="field-group-button plus" type="button">
+            </button>
+          </div>
+          <div class="field-group find">
+            <a class="button find-button" href="#">найти</a>
+          </div>
+        </form>
+      </section>
+
+    </div>
+
+  </div>
 </body>
 
 </html>
