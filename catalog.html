@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>Место отдыха, город Седона</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
 <body>
@@ -159,10 +161,10 @@
                     </div>
                     <div class="range-scale">
                       <div class="range-bar">
-                        <button class="range-toggle toggle-min">
+                        <button class="range-toggle toggle-min" type="button">
                           <span class="visually-hidden">Изменить минимальную стоимость</span>
                         </button>
-                        <button class="range-toggle toggle-max">
+                        <button class="range-toggle toggle-max" type="button">
                           <span class="visually-hidden">Изменить максимальную стоимость</span>
                         </button>
                       </div>
@@ -171,7 +173,7 @@
                 </fieldset>
               </div>
               <div class="catalog-filter-button-container">
-                <button class="button choice-button" type="button">Применить</button>
+                <button class="button choice-button" type="submit">Применить</button>
                 <button class="button reset-button" type="reset">Сбросить</button>
               </div>
             </div>
@@ -366,7 +368,7 @@
                           d="m9.5 0 2.1 6.5h6.9l-5.6 4 2.2 6.5-5.6-4-5.6 4 2.2-6.5-5.6-4h6.9L9.5 0Z" />
                       </svg>
                     </div>
-                    <span class="top">Рейтинг: 8,5</span>
+                    <span class="top">Рейтинг: 5,0</span>
                   </div>
                 </div>
               </li>
@@ -400,9 +402,9 @@
           <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
           <p class="subscribe-text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input class="subscribe-field" placeholder="email@example.com" type="email" name="subscribe-email"
+            <input class="subscribe-field" placeholder="Ваш e-mail" type="email" name="subscribe-email"
               id="subscribe-email" required>
-            <button class="button subscribe-button" type="button">
+            <button class="button subscribe-button" type="submit">
               Подписаться
             </button>
           </form>
