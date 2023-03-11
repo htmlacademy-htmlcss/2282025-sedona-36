@@ -342,8 +342,23 @@ body {
   background-size: 100% auto;
   background-repeat: no-repeat;
   padding: 51px 0 82px 0;
+  position: relative;
 }
 
+.hero::before {
+  content: "";
+  display: block;
+  background: url("../images/index/step.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 1200px;
+  height: 57px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
 .hero-logo {
   display: block;
   margin: 0 auto;
@@ -355,24 +370,6 @@ body {
   padding: 69px 0;
   margin: 0 auto;
   text-align: center;
-
-  position: relative;
-}
-
-.advantages-container::after {
-  content: "";
-  display: block;
-  background: url("../images/index/step.svg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  width: 1200px;
-  height: 57px;
-  position: absolute;
-  right: 0;
-  bottom: 261px;
-  left: -272px;
-  margin: 0;
-  padding: 0;
 }
 
 .advantages-slogan {
@@ -1899,6 +1896,7 @@ body {
   width: 577px;
   min-height: 60px;
   padding: 18px;
+  border: none;
   text-align: center;
 }
 
@@ -1975,7 +1973,7 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
-  color: var(--color-error-red);
+  color: black;
   bottom: -55%;
   left: 20px;
   max-height: 21px;
@@ -1995,6 +1993,20 @@ input::-webkit-inner-spin-button {
   max-height: 21px;
 }
 
+.field:invalid + .error-arrival {
+   border-color: var(--color-error-red);
+}
+
+.field:invalid + .error-arrival:focus {
+  background-color: var(--color-error-red);
+}
+.field:invalid + .error-departure {
+  border-color: var(--color-error-red);
+}
+
+.field:invalid + .error-departure:focus {
+ background-color: var(--color-error-red);
+}
 .error-close {
   display: none;
 }
