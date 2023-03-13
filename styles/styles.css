@@ -182,6 +182,10 @@ body {
   color: var(--color-black);
 }
 
+.page-container {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
 .main-container {
   flex-grow: 1;
   background-color: var(--color-white);
@@ -211,6 +215,7 @@ body {
 .page-header-logo-link {
   display: flex;
   position: absolute;
+  z-index: 1;
 }
 
 /* Состояние для логотипа */
@@ -387,6 +392,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  color: var(--color-error-black);
   margin: 0;
 }
 
@@ -458,13 +464,30 @@ body {
 }
 
 .advantages-item-blue .advantages-title::before {
-  background-color: var(--color-white);
-}
-
-.advantages-description {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  background-color: var(--color-white);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages-item .advantages-description {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--color-error-black);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages-item-blue .advantages-description {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--color-white);
   text-align: center;
   margin: 0;
   padding: 0;
@@ -491,6 +514,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  color: var(--color-error-black);
   margin: 0;
 }
 
@@ -564,6 +588,7 @@ body {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  color: var(--color-error-black);
   margin: 0;
   padding: 0;
 }
@@ -593,6 +618,7 @@ body {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  color: var(--color-error-black);
   margin: 0;
   margin-bottom: 54px;
 }
@@ -638,10 +664,21 @@ body {
   margin-bottom: 20px;
 }
 
-.subscribe-text {
+.subscribe .subscribe-text {
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  color: var(--color-error-black);
+  text-align: center;
+  margin: 0;
+  margin-bottom: 54px;
+}
+
+.subscribe-bacground .subscribe-text {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--color-white);
   text-align: center;
   margin: 0;
   margin-bottom: 54px;
@@ -1264,6 +1301,7 @@ body {
   font-size: 18px;
   line-height: 21px;
   font-weight: 400;
+  color: var(--color-error-black);
   padding: 12px 40px 12px 18px;
   border: 2px solid var(--color-beige);
   border-radius: 4px;
@@ -1371,6 +1409,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 16px 20px;
   margin-top: auto;
+  color: var(--color-error-black);
 }
 
 .product-card-link {
@@ -1431,6 +1470,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+  color: var(--color-error-black);
   padding: 9px 0 8px 0;
   background-color: var(--color-light-beige);
   text-align: center;
@@ -1540,10 +1580,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   width: 100%;
   height: 100%;
   background-color: rgba(242, 242, 242, 0.8);
+  z-index: 2;
 }
 
 .modal {
@@ -1974,7 +2017,7 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
-  color: var(--color-black);
+  color: var(--color-error-red);
   bottom: -55%;
   left: 20px;
   max-height: 21px;
