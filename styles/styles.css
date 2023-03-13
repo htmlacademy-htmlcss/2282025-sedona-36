@@ -45,7 +45,7 @@
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -359,6 +359,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .hero-logo {
   display: block;
   margin: 0 auto;
@@ -1107,7 +1108,7 @@ body {
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin: 0;
 }
 
@@ -1267,7 +1268,7 @@ body {
   border: 2px solid var(--color-beige);
   border-radius: 4px;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   background: url("../images/catalog/arrow-down.svg");
   background-repeat: no-repeat;
   background-position: right 18px center;
@@ -1904,7 +1905,7 @@ body {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 /* Тултип*/
@@ -1973,7 +1974,7 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   line-height: 21px;
   font-weight: 400;
-  color: black;
+  color: var(--color-black);
   bottom: -55%;
   left: 20px;
   max-height: 21px;
@@ -1994,19 +1995,21 @@ input::-webkit-inner-spin-button {
 }
 
 .field:invalid + .error-arrival {
-   border-color: var(--color-error-red);
+  border-color: var(--color-error-red);
 }
 
 .field:invalid + .error-arrival:focus {
   background-color: var(--color-error-red);
 }
+
 .field:invalid + .error-departure {
   border-color: var(--color-error-red);
 }
 
 .field:invalid + .error-departure:focus {
- background-color: var(--color-error-red);
+  background-color: var(--color-error-red);
 }
+
 .error-close {
   display: none;
 }
